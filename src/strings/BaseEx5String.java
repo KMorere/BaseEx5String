@@ -14,6 +14,7 @@ public class BaseEx5String {
 		String[] splitText = text.split(" ");
 		text = "";
 		
+		// Find a given word in the text and ask to replace it.
 		for(int i = 0; i < splitText.length; i++) {
 			if(input.equals(splitText[i])) {
 				System.out.println("Found it !");
@@ -34,6 +35,7 @@ public class BaseEx5String {
 		scan.close();
 	}
 	
+	/// Removes whitespace from a text.
 	private static String removeSpace(String text) {
 		StringBuilder newText = new StringBuilder();
 		for(char c : text.toCharArray())
@@ -43,17 +45,18 @@ public class BaseEx5String {
 		return newText.toString();
 	}
 	
-	private static boolean isPalindrome(String word) {
-		char[] c = word.toCharArray();
+	/// Checks if the given String is a Palindrome.
+	private static boolean isPalindrome(String text) {
+		char[] c = text.toCharArray();
 		String newWord = "";
 		
 		if(c.length < 3)
 			return false;
 		
-		for(int i = word.length()-1; i >= 0; i--) {
+		for(int i = text.length()-1; i >= 0; i--) {
 			newWord += c[i];
 		}
 		
-		return word.equals(newWord);
+		return text.equals(newWord);
 	}
 }
